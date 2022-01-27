@@ -9,7 +9,7 @@
     <th>Else</th>
   </thead>
   <tbody>
-    [TOP_USERS]
+<!--    THIS DATA IS GENERATED FROM BACKEND    -->
     <tr>
       <td>[REFLECT]</td>
       <td>[BUILD]</td>
@@ -19,13 +19,9 @@
       <td>[DEVELOP_MY_TEAM]</td>
       <td>[ELSE]</td>
     </tr>
-    [/TOP_USERS]
+<!--   END OF DATA, THAT IS GENERATED FROM BACKEND   -->
   </tbody>
 </table>
-
-<div class="text-center">
-  [PAGINATION[TOP_USERS]]
-</div>
 
 <script>
 $( document ).ready(function() {
@@ -37,7 +33,6 @@ $( document ).ready(function() {
     let influenceCount = 0;
     let devMyTeamCount = 0;
     let elseCount = 0;
-    // let lengthTable = $("tbody tr").length;
 
     for (let i=0; i < $("tbody tr").length; i++) {
         let j = 0;
