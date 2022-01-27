@@ -1,0 +1,77 @@
+<table class="table">
+  <thead>
+    <th>Reflect skills</th>
+    <th>Emotional inteligence</th>
+    <th>Commuticate</th>
+    <th>Develop plan</th>
+    <th>Influence</th>
+    <th>Develop my team</th>
+    <th>Else</th>
+  </thead>
+  <tbody>
+    [TOP_USERS]
+    <tr>
+      <td>[REFLECT]</td>
+      <td>[BUILD]</td>
+      <td>[COMMUNICATE]</td>
+      <td>[DEVELOP_STRATEGIC]</td>
+      <td>[INFLUENCE]</td>
+      <td>[DEVELOP_MY_TEAM]</td>
+      <td>[ELSE]</td>
+    </tr>
+    [/TOP_USERS]
+  </tbody>
+</table>
+
+<div class="text-center">
+  [PAGINATION[TOP_USERS]]
+</div>
+
+<script>
+$( document ).ready(function() {
+    let allValues = [];
+    let reflectCount = 0;
+    let emoInteligenceCount = 0;
+    let communicateCount = 0;
+    let devPlanCount = 0;
+    let influenceCount = 0;
+    let devMyTeamCount = 0;
+    let elseCount = 0;
+    // let lengthTable = $("tbody tr").length;
+
+    for (let i=0; i < $("tbody tr").length; i++) {
+        let j = 0;
+        let row = $("tbody tr")[i]
+        let valuesArr = row.innerText.split("\t").map(Number);
+
+        let rowObj = {
+          reflect_skills: valuesArr[j],
+          build_emo_inteligence: valuesArr[j + 1],
+          communicate: valuesArr[j + 2],
+          dev_plan: valuesArr[j + 3],
+          influence: valuesArr[j + 4],
+          dev_my_team: valuesArr[j + 5],
+          something_else: valuesArr[j + 6]
+        };
+        allValues.push(rowObj);
+    }
+
+    console.log(allValues);
+    allValues.forEach(item =>{
+        reflectCount += item.reflect_skills;
+        emoInteligenceCount += item.build_emo_inteligence;
+        communicateCount += item.communicate;
+        devPlanCount += item.dev_plan;
+        influenceCount += item.influence;
+        devMyTeamCount += item.dev_my_team;
+        elseCount += item.something_else;
+    })
+    console.log("Total of Reflect count is: " + reflectCount)
+    console.log("Total of Emotional Inteligence count is: " + emoInteligenceCount)
+    console.log("Total of Communicate count is: " + communicateCount)
+    console.log("Total of Develop Plan count is: " + devPlanCount)
+    console.log("Total of Influence count is: " + influenceCount)
+    console.log("Total of Develop My Team count is: " + devMyTeamCount)
+    console.log("Total of Else count is: " + elseCount)
+});
+</script>
