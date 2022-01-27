@@ -6,3 +6,4 @@ Then the function is taking each row-data, puts it into an object, and that obje
 In the end, we receive the nest of objects, depending on the data, that we are receiving from the backend.
 The final operation is to add all values in each column.
 
+Please note jQuery is used here.
